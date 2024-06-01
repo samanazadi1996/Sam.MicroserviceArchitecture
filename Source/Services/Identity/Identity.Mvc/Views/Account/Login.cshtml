@@ -1,0 +1,30 @@
+﻿@model Identity.Mvc.Dtos.AccountDtos.UserLoginDto
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="col-md-5 m-auto">
+    <form method="post">
+        <input type="hidden" asp-for="ReturnUrl" />
+        <div class="col-md-12 form-group">
+            <label asp-for="UserName"></label>
+            <input type="text" class="form-control" asp-for="UserName">
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-12 form-group">
+            <label asp-for="Password"></label>
+            <input type="password" class="form-control" asp-for="Password">
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-12 form-group">
+            <label asp-for="RememberMe"></label>
+            <input type="checkbox" asp-for="RememberMe">
+            <span asp-validation-for="RememberMe" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-12 form-group">
+            <button type="submit" class="btn-success btn btn-block">Login</button>
+        </div>
+    </form>
+</div>
