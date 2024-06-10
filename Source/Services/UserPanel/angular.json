@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "UserPanel.Angular": {
+    "UserPanel": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/UserPanel.Angular",
+            "outputPath": "dist/UserPanel",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "UserPanel.Angular:build:production"
+              "browserTarget": "UserPanel:build:production"
             },
             "development": {
-              "browserTarget": "UserPanel.Angular:build:development"
+              "browserTarget": "UserPanel:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "UserPanel.Angular:build"
+            "browserTarget": "UserPanel:build"
           }
         },
         "test": {

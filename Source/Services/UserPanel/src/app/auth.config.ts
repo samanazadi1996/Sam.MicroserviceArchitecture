@@ -8,12 +8,12 @@ export const authConfig: AuthConfig = {
   redirectUri: window.location.origin + '/',
 
   // The SPA's id. The SPA is registered with this id at the auth-server
-  clientId: 'UserPanel.Angular',
+  clientId: 'Ma_Project',
 
   // set the scope for the permissions the client should request
   // The first three are defined by OIDC. The 4th is a usecase-specific one
-  scope: 'openid profile UserPanel.Angular',
-  resource:"UserPanel.Angular",
-  nonceStateSeparator:"UserPanel.Angular",
+  scope: 'openid profile Ma_Project',
+  resource:"Ma_Project",
+  nonceStateSeparator:"Ma_Project",
   responseType:"code"
 }

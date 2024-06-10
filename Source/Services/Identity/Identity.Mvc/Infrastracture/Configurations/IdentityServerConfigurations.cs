@@ -27,7 +27,7 @@ namespace Identity.Mvc.Infrastracture.Configurations
             };
 
             return new List<ApiScope>(){
-                new ApiScope("UserPanel.Angular", "UserPanel.Angular", claims)
+                new ApiScope("Ma_Project", "Ma_Project", claims)
             };
         }
         public static IEnumerable<Client> GetClients()
@@ -35,15 +35,15 @@ namespace Identity.Mvc.Infrastracture.Configurations
             return new List<Client>(){
                 new Client
                 {
-                    ClientId = "UserPanel.Angular",
-                    ClientName = "UserPanel.Angular",
+                    ClientId = "Ma_Project",
+                    ClientName = "Ma_Project",
                     AllowedGrantTypes = GrantTypes.Code,
                     RequireClientSecret = false,
                     RequirePkce = true,
                     RedirectUris ={ "http://localhost:4200/"},
                     AllowedCorsOrigins = { "http://localhost:4200"},
                     AllowedScopes = {
-                        "UserPanel.Angular",
+                        "Ma_Project",
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile
                     }
@@ -54,7 +54,7 @@ namespace Identity.Mvc.Infrastracture.Configurations
         public static IEnumerable<ApiResource> GetApiResources()
         {
             return new List<ApiResource>(){
-                new ApiResource("UserPanel.Angular", "UserPanel.Angular"){ Scopes = { "UserPanel.Angular" } },
+                new ApiResource("UserPanel", "Ma_Project"){ Scopes = { "Ma_Project" } },
             };
         }
         public static IEnumerable<IdentityResource> GetIdentityResources()

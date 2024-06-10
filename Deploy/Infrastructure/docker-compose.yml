@@ -11,16 +11,19 @@ services:
     volumes:
       - MA_SqlData:/var/opt/mssql
     restart: unless-stopped
+    networks:
+      - MA_Network
 
-  # Seq:
-  #   image:  datalust/seq:latest
-  #   ports:
-  #     - "5345:80"
-  #   environment:
-  #     ACCEPT_EULA: "Y"
-  #   volumes:
-  #     - MA_SeqData:/data
-  #   restart: unless-stopped
+  Seq:
+    image:  datalust/seq:latest
+    ports:
+      - "5345:80"
+    environment:
+      ACCEPT_EULA: "Y"
+    restart: unless-stopped
+    networks:
+      - MA_Network
+
 
   # Redis:
   #   image: redis:latest
@@ -54,3 +57,6 @@ volumes:
 
   # MA_RabbitmqData:
   #   external: true
+
+networks:
+  MA_Network:
