@@ -1,3 +1,15 @@
 version: "3.9"
 
 services:
+  identity.mvc:
+    image: ${DOCKER_REGISTRY-}identitymvc
+    build:
+      context: ../../Source/
+      dockerfile: /Services/Identity/Identity.Mvc/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+    ports:
+      - "5000"
+      - "5001"
